@@ -54,7 +54,8 @@ st.markdown(
     """
     <h1 style="text-align:center;"> Human vs Non-Human Classifier</h1>
     <p style="text-align:center; color:gray;">
-        Deep Learning model using ResNet50
+        Deep Learning model using ResNet50 <br>
+        Nguyễn Đình Trường - 223332861 - Robot & AI - K63
     </p>
     """,
     unsafe_allow_html=True
