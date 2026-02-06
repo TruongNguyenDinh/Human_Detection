@@ -117,7 +117,19 @@ if uploaded_file is not None:
             st.write(f"Threshold: `0.5`")
 
 st.divider()
+st.divider()
 
+st.subheader("🔗 Project Resources")
+
+st.markdown(
+    """
+    -  **Google Colab Notebook**  
+       [Open in Google Colab](https://colab.research.google.com/drive/1l_nCmoteuv7YJE2fUmNZSIKaT9-Mg_gz)
+
+    -  **GitHub Repository**  
+       [View Source Code on GitHub](https://github.com/TruongNguyenDinh/Human_Detection)
+    """
+)
 st.markdown(
     """
     <div style="text-align:center; color:gray; font-size:14px;">
