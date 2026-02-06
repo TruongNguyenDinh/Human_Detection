@@ -47,12 +47,12 @@ def preprocess_image(image: Image.Image):
 # =====================
 st.set_page_config(
     page_title="Human vs Non-Human AI",
-    page_icon="🤖",
+    page_icon="</>",
     layout="wide"
 )
 st.markdown(
     """
-    <h1 style="text-align:center;">🤖 Human vs Non-Human Classifier</h1>
+    <h1 style="text-align:center;"> Human vs Non-Human Classifier</h1>
     <p style="text-align:center; color:gray;">
         Deep Learning model using ResNet50
     </p>
@@ -63,7 +63,7 @@ st.markdown(
 st.divider()
 
 uploaded_file = st.file_uploader(
-    "📤 Upload an image",
+    " Upload an image",
     type=["jpg", "jpeg", "png"],
     help="Upload an image containing a human or non-human object"
 )
@@ -75,12 +75,12 @@ if uploaded_file is not None:
         image = Image.open(uploaded_file)
         st.image(
             image,
-            caption="📷 Uploaded Image",
+            caption=" Uploaded Image",
             use_container_width=True
         )
 
     with col2:
-        with st.spinner("🧠 Model is thinking..."):
+        with st.spinner(" Model is thinking..."):
             img_tensor = preprocess_image(image)
 
             if isinstance(INPUT_SHAPE, list) and len(INPUT_SHAPE) >= 2:
@@ -95,10 +95,10 @@ if uploaded_file is not None:
             prediction = float(prediction_raw[0][0])
 
         is_human = prediction >= 0.5
-        label = "Human 👤" if is_human else "Non-Human 🤖"
+        label = "Human " if is_human else "Non-Human "
         confidence = prediction if is_human else 1.0 - prediction
 
-        st.subheader("🔍 Prediction Result")
+        st.subheader(" Prediction Result")
 
         if is_human:
             st.success(f"**{label}**")
@@ -112,7 +112,7 @@ if uploaded_file is not None:
 
         st.progress(confidence)
 
-        with st.expander("📊 Model raw output"):
+        with st.expander("Model raw output"):
             st.write(f"Raw score: `{prediction:.6f}`")
             st.write(f"Threshold: `0.5`")
 
@@ -121,8 +121,8 @@ st.divider()
 st.markdown(
     """
     <div style="text-align:center; color:gray; font-size:14px;">
-        🚀 Powered by TensorFlow & Streamlit <br>
-        Made with ❤️ for Computer Vision
+         Powered by TensorFlow & Streamlit <br>
+        Made with <3 for Computer Vision
     </div>
     """,
     unsafe_allow_html=True
